@@ -1,0 +1,250 @@
+body{
+  color: #007bff;
+  background-color: whitesmoke;
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+
+  display: flex;
+  align-items: center;
+  background-color: gainsboro;
+  /* margin-bottom: 200px; */
+  /* margin-left: 200px; */
+  justify-content: space-between;
+  width: 80vw;
+  margin: 0;
+
+
+}
+.main_cointner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between image and text */
+}
+
+.logo img {
+  width: 50px;
+  /* height: auto; */
+}
+  
+.logo h1 {
+  color: white;
+  font-size: 24px;
+}
+
+.linkContainer {
+  /* display: flex; */
+  justify-content: center; 
+  padding: 20px;
+  margin: auto;
+}
+
+
+.nav-link {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+}
+
+
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  /* padding: 10px 15px; */
+  /* border-radius: 5px; */
+  transition: 0.3s;
+}
+
+
+.link:hover {
+  background-color: white;
+}
+
+.alldoctor{
+  padding-left: 10px 15px;
+  /* margin: auto; */
+  text-align: center;
+  justify-content: center;
+}
+.Newbooking{
+  padding-left: 10px 15px;
+  /* margin: auto; */
+  text-align: center;
+  justify-content: center;
+}
+.login_form{
+  max-width: 30%;
+    box-shadow: 0.2px 0px 8px rgba(0, 0, 0, 0.596);
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 86%;
+margin-top: 28px;
+margin: auto;
+margin-top: 22px;
+}
+.inputField{
+   outline: none;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 10px 55px;
+    margin-bottom: 12px;
+    width: 86%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+    color: rgb(41, 2, 2);
+    &:hover{
+        border: 1px solid dodgerblue;
+    }
+
+}
+.img{
+  height: 500px;
+  margin-bottom: 15%;
+}
+.mainContaner{
+  /* padding: 20px 35px; */
+  margin-top: 205px;
+  border: none;
+  border-radius: 12px;
+  /* max-width: 75px; */
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+
+}
+.small_container{
+  padding: 20px 35px;
+  font-size: 15px;
+  order: 1px solid gray;
+  border-radius: 12px;
+margin-bottom: 7px;
+  margin-top: 35px;
+}
+.minicontainer{
+/* margin-bottom: 200px; */
+text-align: center;
+/* background-color: red; */
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+/* Main Container */
+.main_container {
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Table Styling */
+.doctor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Headers */
+.doctor-table th {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Table Rows */
+.doctor-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Alternate Row Colors */
+.doctor-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover Effect */
+.doctor-table tr:hover {
+  background-color: #e0e0e0;
+  transition: 0.3s ease-in-out;
+}
+
+/* Page Title */
+h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.table-container {
+  width: 80%;
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+.para{
+  max-width: 70%;
+  margin: auto;
+  border: 1px solid gainsboro;
+border-radius: 14px;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-top: 14px;
+margin-bottom: 14px;
+background-color: peachpuff;
+display: flex;
+}
+.paraText{
+  font-size: 20px;
+  font-style: italic;
+}
+.img_doctot{
+  width: 10%;
+  height: 10%;
+  margin-right: 19px;
+}
