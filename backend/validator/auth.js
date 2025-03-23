@@ -18,7 +18,11 @@ const appointmentSchema = z.object({
   phoneno: z
     .number({ required_error: "Name is required" })
     .min(10, { message: "Name must be at least 10 char" })
-    .max(25, { message: "Name must be at least 25 char" }), 
+    .max(250, { message: "Name must be at least 25 char" }),
+  location: z
+    .number({ required_error: "location is required" })
+    .min(3, { message: "location must be at least 3 char" })
+    .max(250, { message: "location must be at least 250 char" }),
 });
 
 export default appointmentSchema;

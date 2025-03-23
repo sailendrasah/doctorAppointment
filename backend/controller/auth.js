@@ -5,29 +5,34 @@ const viewappointment = async (req, res) => {
     console.log(req.body);
     const { name, age, address, phoneno } = req.body;
 
-    const userExisit = await Viewappointment.findOne({ name });
+    // Check if user already exists
+    
 
-    if (userExisit) {
-      res.status(400).send("user already exisit");
-    }
-
+    // Create a new user if the user does not exist
     const newUser = await Viewappointment.create({
       name,
       age,
       address,
       phoneno,
     });
-    res.status(200).send("appointment susessfull...");
+
+    // Return success response
+    return res.status(200).json("Appointment successful...");
   } catch (error) {
-    res.status(404).send("error");
+    console.log("Error:", error);
+    // Ensure an error response is only sent once
+    return res.status(500).json("Error occurred");
   }
 };
+
+// export default viewappointment;
+
 // ...............................getting all doctor name......................................................
-import Doctor from "../model/Doctor.js";
+import Alldt from "../model/Doctor.js";
 
 const dactor = async (req, res) => {
   try {
-    const response = await Doctor.find();
+    const response = await Alldt.find();
     // console.log(JSON.stringify(response));
     res.status(200).send({
       sucess: true,
@@ -39,13 +44,36 @@ const dactor = async (req, res) => {
   }
 };
 // .......................delete logic...............
-const deletePatient = async(req,res,next)=>{
+const deletePatient = async (req, res, next) => {
   try {
     const id = req.params.id;
-    await Viewappointment.deleteOne({_id:id});
-    return res.status(200).send({msg:"patient delete sucessfull"})
+   const result = await Viewappointment.deleteOne({ _id: id });
+
+   // Check if a document was actually deleted
+   if (result.deletedCount === 0) {
+     return res.status(404).send({ msg: "Patient not found" });
+   }
   } catch (error) {
-next(error)    
+    console.log(error);
   }
-}
-export { viewappointment, dactor, deletePatient }; 
+};
+
+
+
+
+
+const deleteDoctor = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const result = await Alldt.deleteOne({ _id: id });
+
+    // Check if a document was actually deleted
+    if (result.deletedCount === 0) {
+      return res.status(404).send({ msg: "Patient not found" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+export { viewappointment, deletePatient,dactor,deleteDoctor };
+ 

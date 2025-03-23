@@ -19,19 +19,34 @@ function MyPatient() {
       console.log("Error from panel:", error);
     }
   };
-  const deletePatient = async(id)=>{
-    
-      const response = await fetch(`http://localhost:3000/auth/allpatient/delete/${id}`, {
-        method: "DELETE",
-      });
-    getPatient();
+  const deletePatient = async (id) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/auth3/allpatient/delete/${id}`, // Correct the URL path here
+        {
+          method: "DELETE",
+          headers: { "Content-type": "application/json" },
+        }
+      );
+
+      if (response.ok) {
+        getPatient(); // Refresh the patient list after successful deletion
+      } 
+      //   console.error("Failed to delete patient:", response.statusText);
+      // }
+    } catch (error) {
+      console.log("Error occurred while deleting patient:", error);
+    }
+  };
+
+        
 
 
-  }
-
+  
   useEffect(() => {
     getPatient();
   }, []);
+   
 
   return (
     <>

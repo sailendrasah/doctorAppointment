@@ -27,8 +27,7 @@ function Newbooking() {
     ) {
       toast.error(`please the form proprly`);
     } else {
-      const response = await fetch(
-        "http://localhost:3000/auth/viewappointment",
+      const response = await fetch("http://localhost:3000/auth/viewappointment",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },

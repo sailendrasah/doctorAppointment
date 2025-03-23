@@ -31,9 +31,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to={"/view_appointment"} className="link">
-                viewappointment
-              </Link>
+            
             </li>
             <li>
               <Link to={"/alldoctor"} className="link">

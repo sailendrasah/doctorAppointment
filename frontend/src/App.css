@@ -5,16 +5,17 @@ body{
   margin: 0;
 }
 .navbar {
-
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2c3e50;
+  padding: 10px 20px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  background-color: gainsboro;
-  /* margin-bottom: 200px; */
-  /* margin-left: 200px; */
-  justify-content: space-between;
-  width: 80vw;
-  margin: 0;
-
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+ 
 
 }
 .main_cointner{
@@ -44,7 +45,7 @@ body{
   /* display: flex; */
   justify-content: center; 
   padding: 20px;
-  margin: auto;
+  /* margin: auto; */
 }
 
 
@@ -61,9 +62,9 @@ body{
 
 .link {
   text-decoration: none;
-  color: black;
+  color: rgb(175, 35, 35);
   font-weight: bold;
-  /* padding: 10px 15px; */
+  padding: 10px 15px;
   /* border-radius: 5px; */
   transition: 0.3s;
 }
@@ -86,7 +87,7 @@ body{
   justify-content: center;
 }
 .login_form{
-  max-width: 30%;
+  max-width: 80%;
     box-shadow: 0.2px 0px 8px rgba(0, 0, 0, 0.596);
   text-align: center;
   border: none;
@@ -199,8 +200,15 @@ h1 {
 }
 .table-container {
   width: 80%;
-  margin: 20px auto;
-  overflow-x: auto;
+  /* margin:  auto; */
+  margin-top: 200px;
+  text-align: center;
+justify-content: center;
+align-self: center;
+margin-left: 400px;
+  /* overflow-x: auto; */
+  /* margin-bottom: 100px; */
+
 }
 
 table {

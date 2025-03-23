@@ -26,6 +26,6 @@ const allDoctorSchema = new mongoose.Schema({
 
 });
 
-const Doctor = new mongoose.model("Doctor",allDoctorSchema);
+const Alldt = new mongoose.model("Alldt",allDoctorSchema);
 
-export default Doctor;
+export default Alldt;

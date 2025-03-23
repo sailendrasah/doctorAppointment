@@ -1,9 +1,10 @@
-import { dactor } from "../controller/auth.js";
+import doctor from '../controller/doctor.js';
 import express from 'express';
+// import doctor from "../controller/doctor.js";
 
 const router = express.Router();
 
 
-router.route("/doctorRegister").post(dactor)
+router.route("/doctorRegister").post(doctor)
 
-export default router;
+export default router; 
