@@ -12,9 +12,9 @@ const PORT = 3000;
 
 app.use(express.json());
 
-app.use("/", (req, res) => {
-    res.send("<h1>Backend server is running</h1>")
-})
+// app.use("/", (req, res) => {
+//     res.send("Backend server is running")
+// })
  app.use("/auth",authRouther)
  app.use("/auth2", authRouther2);
  app.use("/auth3",authRouther3);

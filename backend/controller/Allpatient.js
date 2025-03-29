@@ -9,4 +9,4 @@ const allPatient = async(req,res)=>{
         res.status(400).send("error from panel");
     }
 }
-export default allPatient;
+export default allPatient; 

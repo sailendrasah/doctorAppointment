@@ -30,7 +30,7 @@ function Newbooking() {
       toast.error(`please the form proprly`);
     } else { 
       const response = await fetch(
-        "http://localhost:3000/auth2/doctorRegister",
+        "https://vercel-backend-739n.vercel.app/auth2/doctorRegister",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },

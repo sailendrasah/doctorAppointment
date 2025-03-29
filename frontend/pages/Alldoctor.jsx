@@ -6,9 +6,15 @@ function Alldoctor() {
 
   const getDoctor = async () => {
     try {
-      const response = await fetch("http://localhost:3000/auth/alldoctor", {
-        method: "GET",
-      });
+      const response = await fetch(
+        "https://vercel-backend-739n.vercel.app/auth/alldoctor",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();

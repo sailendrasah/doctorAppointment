@@ -7,9 +7,12 @@ function MyPatient() {
 
   const getPatient = async () => {
     try {
-      const response = await fetch("http://localhost:3000/auth/allpatient", {
-        method: "GET",
-      });
+      const response = await fetch(
+        "https://vercel-backend-739n.vercel.app/auth/allpatient",
+        {
+          method: "GET",
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         console.log("Data fetched successfully:", data);
@@ -22,7 +25,7 @@ function MyPatient() {
   const deletePatient = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/auth3/allpatient/delete/${id}`, // Correct the URL path here
+        `https://vercel-backend-739n.vercel.app/auth3/allpatient/delete/${id}`, // Correct the URL path here
         {
           method: "DELETE",
           headers: { "Content-type": "application/json" },
