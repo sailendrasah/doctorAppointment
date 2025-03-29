@@ -35,7 +35,7 @@ function Header() {
             </li>
             <li>
               <Link to={"/alldoctor"} className="link">
-                All doctor
+                All doctor 
               </Link>
               <Link to={"/doctorRegister"} className="link">
                 DoctorRegister

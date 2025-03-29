@@ -10,6 +10,6 @@ const DB = async()=>{
         });
     } catch (error) {
         console.log("error fro DB")
-    }
+    } 
 }
 export default DB;
