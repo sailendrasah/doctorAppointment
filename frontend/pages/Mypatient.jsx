@@ -8,7 +8,8 @@ function MyPatient() {
   const getPatient = async () => {
     try {
       const response = await fetch(
-        "https://vercel-backend-739n.vercel.app/auth/allpatient",
+        "https://doctor-appointment-ten-dun.vercel.app/auth/allpatient",
+        // "https://vercel-backend-739n.vercel.app/auth/allpatient",
         {
           method: "GET",
         }
