@@ -324,6 +324,7 @@ tr:hover {
   padding: 8px 40px;
   margin: 16px 0px;
   transition: 0.4s ease-in-out;
+  color:white;
   &:hover {
     background-color: #007bff;
   }
