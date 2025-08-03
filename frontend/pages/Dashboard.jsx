@@ -5,6 +5,7 @@ import img from "../pages/setho.jpeg";
 function inputHandler() {}
 function Dashboard() {
   const navigate = useNavigate()
+  
   const viewAppointment=()=>{
     navigate("/view_appointment");
   }
@@ -27,11 +28,11 @@ function Dashboard() {
           Thanks for joining us.We are always trying to get your service you can
           view your daily schedule,Reach patient Appointment at home
         </p>
-        <div className="img_doctot">
-          <img src={img} alt="" />
-        </div>
+        {/* <div className="img_doctot"> */}
+          <img src={img} alt="" className="dashboard_img" />
+        {/* </div> */}
       </div>
-      <div className="mainContaner">
+      {/* <div className="mainContaner">
         <button className="viewappointment" onClick={viewAppointment}>
           viewappointment
         </button>
@@ -44,7 +45,7 @@ function Dashboard() {
         <button className="Alldoctor" onClick={doctor}>
           All Doctor
         </button>
-      </div>
+      </div> */}
     </>
   );
 }

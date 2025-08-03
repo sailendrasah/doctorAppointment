@@ -47,43 +47,48 @@ function Newbooking() {
 
       <div className="container">
         {/* <img src={img2} className="img" alt="appointment img" /> */}
-        <div className="login_form">
-          <input
-            type="text"
-            name="name"
-            className="inputField"
-            placeholder="enter name of patient"
-            id="data.name"
-            onChange={inputEvent}
-          />
-          <input
-            type="number"
-            className="inputField"
-            name="age"
-            placeholder="enter age of patient"
-            id="data.age"
-            onChange={inputEvent}
-          />
-          <input
-            type="text"
-            className="inputField"
-            name="address"
-            placeholder="enter address of patient"
-            id="data.address"
-            onChange={inputEvent}
-          />
-          <input
-            type="text"
-            className="inputField"
-            name="phoneno"
-            placeholder="enter phone no. of patient"
-            id="data.phoneno"
-            onChange={inputEvent}
-          />
-          <br />
-          <button className="btn" onClick={submitHandler}>
-            submit
-          </button>
+        <div className="formContainer">
+          <div className="login_form">
+          <h2 className="bookSlot">Booking the slot</h2>
+          <p className="bookPara">Please fill your details to book your slot for OPD</p>
+            <input
+              type="text"
+              name="name"
+              className="inputField"
+              placeholder="Enter name of patient"
+              id="data.name"
+              onChange={inputEvent}
+            />
+            <input
+              type="number"
+              className="inputField"
+              name="age"
+              placeholder="Enter age of patient"
+              id="data.age"
+              onChange={inputEvent}
+            />
+            <input
+              type="text"
+              className="inputField"
+              name="address"
+              placeholder="Enter address of patient"
+              id="data.address"
+              onChange={inputEvent}
+            />
+            <input
+              type="text"
+              className="inputField"
+              name="phoneno"
+              placeholder="Enter phone no. of patient"
+              id="data.phoneno"
+              onChange={inputEvent}
+            />
+            <br />
+            <button className="submitBtn" onClick={submitHandler}>
+              submit
+            </button>
+          </div>
+
         </div>
       </div>
     </>

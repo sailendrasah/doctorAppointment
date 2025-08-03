@@ -1,4 +1,4 @@
-import  {useState}  from "react";
+import { useState } from "react";
 import Header from "../component/Header";
 import { toast } from "react-toastify";
 
@@ -8,7 +8,7 @@ function Newbooking() {
     qualification: "",
     specialty: "",
     contact: "",
-    location:"",
+    location: "",
   });
   function inputEvent(e) {
     setData((preData) => {
@@ -24,11 +24,11 @@ function Newbooking() {
       data.name === "" ||
       data.qualification === "" ||
       data.specialty === "" ||
-      data. contact === "" ||
-      data.location ===""
+      data.contact === "" ||
+      data.location === ""
     ) {
       toast.error(`please the form proprly`);
-    } else { 
+    } else {
       const response = await fetch(
         // "https://vercel-backend-739n.vercel.app/auth2/doctorRegister",
         "https://doctor-appointment-ten-dun.vercel.app/auth2/doctorRegister",
@@ -48,53 +48,60 @@ function Newbooking() {
     <>
       <Header />
 
-      <div className="container">
+      <div className="container  ">
         {/* <img src={img2} className="img" alt="appointment img" /> */}
-        <div className="login_form">
-          <input
-            type="text"
-            name="name"
-            className="inputField"
-            placeholder="enter name of doctor"
-            id="data.name"
-            onChange={inputEvent}
-          />
-          <input
-            type="text"
-            className="inputField"
-            name="qualification"
-            placeholder="enter Qualification of doctor"
-            id="data.qualification"
-            onChange={inputEvent}
-          />
-          <input
-            type="text"
-            className="inputField"
-            name="specialty"
-            placeholder="enter Specialty of patient"
-            id="data.specialty"
-            onChange={inputEvent}
-          />
-          <input
-            type="text"
-            className="inputField"
-            name="contact"
-            placeholder="enter Contact of patient"
-            id="data.contact"
-            onChange={inputEvent}
-          />
-          <input
-            type="text"
-            className="inputField"
-            name="location"
-            placeholder="enter Location of patient"
-            id="data.location"
-            onChange={inputEvent}
-          />
-          <br />
-          <button className="btn" onClick={submitHandler}>
-            submit
-          </button>
+        <div className="formCont">
+          <div className="login_form registerForm  ">
+            <h2 className="bookSlot" >Register Yourself</h2>
+            <p className="bookPara">
+              Please fill your details to register as a doctor on this web app. Thank you!
+            </p>
+            <input
+              type="text"
+              name="name"
+              className="inputField"
+              placeholder="Enter name of doctor"
+              id="data.name"
+              onChange={inputEvent}
+            />
+            <input
+              type="text"
+              className="inputField"
+              name="qualification"
+              placeholder="Enter Qualification of doctor"
+              id="data.qualification"
+              onChange={inputEvent}
+            />
+            <input
+              type="text"
+              className="inputField"
+              name="specialty"
+              placeholder="Enter Specialty of patient"
+              id="data.specialty"
+              onChange={inputEvent}
+            />
+            <input
+              type="text"
+              className="inputField"
+              name="contact"
+              placeholder="Enter Contact of patient"
+              id="data.contact"
+              onChange={inputEvent}
+            />
+            <input
+              type="text"
+              className="inputField"
+              name="location"
+              placeholder="Enter Location of patient"
+              id="data.location"
+              onChange={inputEvent}
+            />
+            <br />
+            <button className="submitBtn" onClick={submitHandler}>
+              submit
+            </button>
+          </div>
+
         </div>
       </div>
     </>

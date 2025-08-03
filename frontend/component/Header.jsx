@@ -10,7 +10,7 @@ function Header() {
       <div className="navbar">
         <div className="logo">
           <img src={img} alt="" />
-          <h1>logo</h1>
+
         </div>
 
         <div className="linkContainer">
@@ -22,23 +22,22 @@ function Header() {
             </li>
             <li>
               <Link to={"/My_patient"} className="link">
-                MyPatient
+                My Patients
               </Link>
-            </li>
-            <li>
-              <Link to={"/newbooking"} className="link">
-                new booking
-              </Link>
-            </li>
-            <li>
-            
             </li>
             <li>
               <Link to={"/alldoctor"} className="link">
-                All doctor 
+                All doctors 
               </Link>
-              <Link to={"/doctorRegister"} className="link">
-                DoctorRegister
+            </li>
+            <li>
+              <Link to={"/newbooking"} className="booking_btn">
+                Book Your Slot
+              </Link>
+            </li>
+            <li>
+              <Link to={"/doctorRegister"} className="link_reg">
+                Register as Doctor
               </Link>
             </li>
           </ul>

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
+import Loader from "../component/Loader";
 // import "./MyPatient.css"; // Import CSS file
 
 function MyPatient() {
   const [patients, setPatients] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getPatient = async () => {
     try {
+      setLoading(true);
       const response = await fetch(
         "https://doctor-appointment-ten-dun.vercel.app/auth/allpatient",
         // "https://vercel-backend-739n.vercel.app/auth/allpatient",
@@ -18,9 +21,11 @@ function MyPatient() {
         const data = await response.json();
         console.log("Data fetched successfully:", data);
         setPatients(data);
+        setLoading(false);
       }
     } catch (error) {
       console.log("Error from panel:", error);
+      setLoading(false);
     }
   };
   const deletePatient = async (id) => {
@@ -35,7 +40,7 @@ function MyPatient() {
 
       if (response.ok) {
         getPatient(); // Refresh the patient list after successful deletion
-      } 
+      }
       //   console.error("Failed to delete patient:", response.statusText);
       // }
     } catch (error) {
@@ -43,19 +48,16 @@ function MyPatient() {
     }
   };
 
-        
-
-
-  
   useEffect(() => {
     getPatient();
   }, []);
-   
 
   return (
     <>
       <Header />
       <div className="table-container">
+        <h3 className="patient_list">Patient List</h3>
+
         <table>
           <thead>
             <tr>
@@ -75,12 +77,18 @@ function MyPatient() {
                   <td>{age}</td>
                   <td>{address}</td>
                   <td>{phoneno}</td>
-                  <td><button onClick={()=>deletePatient(currEle._id)}>Delete</button></td>
+                  <td>
+                    <button onClick={() => deletePatient(currEle._id)}>
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               );
-            })} 
+            })}
           </tbody>
         </table>
+
+        {loading && <Loader />}
       </div>
     </>
   );
