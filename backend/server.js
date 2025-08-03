@@ -12,7 +12,7 @@ const PORT = 3000;
 
 app.use(express.json());
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send(`
     <h1>Doctor Appointment System: Backend Server is Running</h1>
     <h2>Available API Endpoints:</h2>
