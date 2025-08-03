@@ -26,7 +26,7 @@ function MyPatient() {
   const deletePatient = async (id) => {
     try {
       const response = await fetch(
-        `https://vercel-backend-739n.vercel.app/auth3/allpatient/delete/${id}`, // Correct the URL path here
+        `https://doctor-appointment-ten-dun.vercel.app/auth3/allpatient/delete/${id}`, // Correct the URL path here
         {
           method: "DELETE",
           headers: { "Content-type": "application/json" },
