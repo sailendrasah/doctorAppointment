@@ -21,10 +21,11 @@ function MyPatient() {
         const data = await response.json();
         console.log("Data fetched successfully:", data);
         setPatients(data);
-        setLoading(false);
       }
     } catch (error) {
       console.log("Error from panel:", error);
+     
+    } finally {
       setLoading(false);
     }
   };

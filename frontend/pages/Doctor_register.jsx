@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Header from "../component/Header";
 import { toast } from "react-toastify";
+import Loader from "../component/Loader";
+import { useNavigate } from "react-router-dom";
 
 function Newbooking() {
+  const [loader, setLoader] = useState(false);
+  const navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
     qualification: "",
@@ -19,7 +23,7 @@ function Newbooking() {
     });
   }
   const submitHandler = async () => {
-    console.log("clicked");
+    
     if (
       data.name === "" ||
       data.qualification === "" ||
@@ -29,18 +33,27 @@ function Newbooking() {
     ) {
       toast.error(`please the form proprly`);
     } else {
-      const response = await fetch(
-        // "https://vercel-backend-739n.vercel.app/auth2/doctorRegister",
-        "https://doctor-appointment-ten-dun.vercel.app/auth2/doctorRegister",
-        {
-          method: "POST",
-          headers: { "Content-type": "application/json" },
-          body: JSON.stringify(data),
+      try {
+        setLoader(true);
+        const response = await fetch(
+          // "https://vercel-backend-739n.vercel.app/auth2/doctorRegister",
+          "https://doctor-appointment-ten-dun.vercel.app/auth2/doctorRegister",
+          {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(data),
+          }
+        );
+        console.log(response);
+        if (response.ok) {
+          toast.success("sucessful");
+          navigate("/alldoctor");
         }
-      );
-      console.log(response);
-      if (response.ok) {
-        toast.success("sucessful");
+        
+      } catch (error) {
+        
+      } finally{
+        setLoader(false);
       }
     }
   };
@@ -52,9 +65,10 @@ function Newbooking() {
         {/* <img src={img2} className="img" alt="appointment img" /> */}
         <div className="formCont">
           <div className="login_form registerForm  ">
-            <h2 className="bookSlot" >Register Yourself</h2>
+            <h2 className="bookSlot">Register Yourself</h2>
             <p className="bookPara">
-              Please fill your details to register as a doctor on this web app. Thank you!
+              Please fill your details to register as a doctor on this web app.
+              Thank you!
             </p>
             <input
               type="text"
@@ -97,11 +111,13 @@ function Newbooking() {
               onChange={inputEvent}
             />
             <br />
-            <button className="submitBtn" onClick={submitHandler}>
+            {
+              loader ? <Loader /> :  <button className="submitBtn" onClick={submitHandler}>
               submit
             </button>
+            }
+           
           </div>
-
         </div>
       </div>
     </>
