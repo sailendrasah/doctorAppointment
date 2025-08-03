@@ -27,7 +27,6 @@ function Alldoctor() {
       console.log("Error occurred while fetching data:", error);
     }
   };
- 
 
   useEffect(() => {
     getDoctor();
@@ -47,7 +46,6 @@ function Alldoctor() {
               <th>Specialty</th>
               <th>Contact</th>
               <th>Location</th>
-              
             </tr>
           </thead>
           <tbody>

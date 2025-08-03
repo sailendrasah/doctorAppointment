@@ -10,6 +10,6 @@ router.route("/alldoctor").get(dactor);
 router.route("/allpatient").get(allPatient);
 // router.route("/auth/allpatient/:id").delete(deletePatient);
 // router.route("/auth/allpatient/:id").delete(deletePatient);
-
+   
 
 export default router;
