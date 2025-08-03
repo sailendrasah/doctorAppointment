@@ -12,9 +12,21 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// app.use("/", (req, res) => {
-//     res.send("Backend server is running")
-// })
+app.use("/", (req, res) => {
+  res.send(`
+    <h1>Doctor Appointment System: Backend Server is Running</h1>
+    <h2>Available API Endpoints:</h2>
+    <ul>
+      <li><strong>POST</strong> /auth/viewappointment – Register a new user</li>
+      <li><strong>GET</strong> /auth/alldoctor – All doctor list</li>
+      <li><strong>GET</strong> /auth/allpatient – Get list of patients</li>
+      <li><strong>POST</strong> /auth2/doctorRegister – Register as a doctor</li>
+      <li><strong>GET</strong> /auth3/allpatient/delete/:id – To delete a patient(Admin pannel route)</li>
+      <li><strong>GET</strong> /auth/alldoctor/deleteDt/:id – To delete a doctor(Admin pannel route)</li>
+    </ul>
+  `);
+});
+
  app.use("/auth",authRouther)
  app.use("/auth2", authRouther2);
  app.use("/auth3",authRouther3);
